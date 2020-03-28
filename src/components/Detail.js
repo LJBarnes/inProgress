@@ -9,7 +9,8 @@ function Detail(props) {
       <h3>Date: {props.event.dates.start.localDate}</h3>
       <h3>Time: {props.event.dates.start.localTime}</h3>
       <h3>Venue: {props.event._embedded.venues[0].name}</h3>
-      <h3>Location: {props.event._embedded.venues[0].city.name + ", " + props.event._embedded.venues[0].state.name }</h3>    
+      <h3>Location: {props.event._embedded.venues[0].city.name + ", " + props.event._embedded.venues[0].state.name }</h3>
+      <button onClick={props.onClick} className={`card-btn ${props["data-value"]}`} {...props}>Fucking React. </button>  
     </div>
   );
 }

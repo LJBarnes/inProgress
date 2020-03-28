@@ -12,11 +12,14 @@ class Adventures extends Component {
     // When this component mounts, return events within 50 mi of this lat/lon
     componentDidMount() {
         this.getEvents("44.309662,-73.261215");
+        
     }
 
     getEvents = query => {
         API.events(query)
-            .then(res => this.setState({ events: res.data._embedded.events }))
+            .then(function (res) {this.setState({ events: res.data._embedded.events });
+            console.log(this.state.events[0]);
+        })
             .catch(err => console.log(err));
             
             
@@ -31,9 +34,9 @@ class Adventures extends Component {
                     
                  />
                  {console.log(this.state.events[0].name)} */}
-                 {console.log(this.state.events[0])}
-                 {this.state.events.map(individualEvent => <Detail event={individualEvent} /> )}
-                 {/* <Detail event={this.state.events} />  */}
+                 {/* {console.log(this.state.events[0])} */}
+                 {/* {this.state.events.map(individualEvent => <Detail event={individualEvent} /> )} */}
+                 {/* <Detail event={this.state.events[0]} />  */}
             </div>
         );
     }

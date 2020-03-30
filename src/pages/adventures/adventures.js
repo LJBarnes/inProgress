@@ -2,7 +2,8 @@ import React, { Component } from "react";
 // import SearchForm from "./SearchForm";
 // import ResultList from "./ResultList";
 import API from "../../utils/API";
-import Detail from "../../components/Detail";
+import Detail from "../../components/Detail/Detail";
+import "./style.css";
 
 class Adventures extends Component {
 
@@ -39,7 +40,7 @@ class Adventures extends Component {
     };
 
     _ToggleNext() {
-        if(this.state.currentEvent == this.state.events.length - 1)
+        if(this.state.currentEvent === this.state.events.length - 1)
             return;
 
         this.setState(prevState => ({
@@ -58,14 +59,15 @@ class Adventures extends Component {
         let {currentEvent, events} = this.state;
 
         return (
-            <div>
+            <div className="Background">
                 {/* <Detail event={this.state.events}
                     
                  />
                  {console.log(this.state.events[0].name)} */}
                 {/* {console.log(this.state.events[0])} */}
                 {/* {this.state.events.map(individualEvent => <Detail event={individualEvent} /> )} */}
-                <button className="toggle toggle--next" style={{backgroundColor: "green"}} onClick={this._ToggleNext}>LIKE</button>
+                <button className="btn btn-outline-danger toggle toggle--next " onClick={this._ToggleNext}>Let's Go!</button>
+                <button className="btn btn-outline-success toggle toggle--next position " onClick={this._ToggleNext}>Hard Pass.</button>
 
                 <Detail event={events[currentEvent]} />
 

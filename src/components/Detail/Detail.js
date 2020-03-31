@@ -7,7 +7,7 @@ import "./detailStyle.css";
 
 const Detail = (props) => {
   return (
-    <div>
+    <div className="billy">
       <Row>
         <Col sm="4" className="transparent"></Col>
         <Col sm="4">

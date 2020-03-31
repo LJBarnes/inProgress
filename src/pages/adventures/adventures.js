@@ -40,7 +40,7 @@ class Adventures extends Component {
     };
 
     _ToggleNext() {
-        if(this.state.currentEvent === this.state.events.length - 1)
+        if (this.state.currentEvent === this.state.events.length - 1)
             return;
 
         this.setState(prevState => ({
@@ -56,7 +56,7 @@ class Adventures extends Component {
         if (!isLoaded) {
             return <div>Loading...</div>
         }
-        let {currentEvent, events} = this.state;
+        let { currentEvent, events } = this.state;
 
         return (
             <div className="Background">
@@ -66,8 +66,10 @@ class Adventures extends Component {
                  {console.log(this.state.events[0].name)} */}
                 {/* {console.log(this.state.events[0])} */}
                 {/* {this.state.events.map(individualEvent => <Detail event={individualEvent} /> )} */}
-                <button className="btn btn-outline-danger toggle toggle--next " onClick={this._ToggleNext}>Let's Go!</button>
-                <button className="btn btn-outline-success toggle toggle--next position " onClick={this._ToggleNext}>Hard Pass.</button>
+                <button className="btn btn-outline-success position" onClick={this._ToggleNext}>Let's Go!</button>
+                <br></br>
+                <br></br>
+                <button style={{position: "absolute", bottom: "50%", right: "70%", zIndex: "2"}} className="btn btn-outline-danger" onClick={this._ToggleNext}>Hard Pass.</button>
 
                 <Detail event={events[currentEvent]} />
 
